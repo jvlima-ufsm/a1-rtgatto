@@ -14,11 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Compila catch
-      run: g++ -Wall -g catch_amalgamated.cpp
+      run: g++ -Wall -g -c catch_amalgamated.cpp
     - name: Compila testes
-      run: g++ -Wall -g testes.cpp
+      run: g++ -Wall -g -c testes.cpp
     - name: Compila cadeiras
-      run: gcc -Wall -g cadeias.c
+      run: gcc -Wall -g -c cadeias.c
     - name: Programa final
       run: g++ -Wall -g cadeias.o testes.o  catch_amalgamated.o
     - name: Roda testes TDD
