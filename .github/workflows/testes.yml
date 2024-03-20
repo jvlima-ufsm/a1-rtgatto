@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Instala valgrind
+      run: sudo apt install -y valgrind
     - name: Compila catch
       run: g++ -Wall -g -c catch_amalgamated.cpp
     - name: Compila testes
