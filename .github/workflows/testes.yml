@@ -26,4 +26,4 @@ jobs:
     - name: Roda testes TDD
       run: ./a.out --reporter compact --success
     - name: Roda valgrind
-      run: valgrind -q --leak-check=full ./a.out --reporter compact --success
+      run: valgrind --leak-check=full ./a.out --reporter compact --success
