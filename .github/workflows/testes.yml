@@ -23,7 +23,5 @@ jobs:
       run: gcc -Wall -g -c cadeias.c
     - name: Programa final
       run: g++ -Wall -g cadeias.o testes.o  catch_amalgamated.o
-    - name: Roda testes TDD
-      run: ./a.out --reporter compact --success
-    - name: Roda valgrind
+    - name: Roda testes no valgrind
       run: valgrind --leak-check=full ./a.out --reporter compact --success
