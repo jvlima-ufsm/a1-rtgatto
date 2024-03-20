@@ -1,0 +1,24 @@
+name: TDD A1 - ed2024a
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compila codigo
+      run: g++ -Wall -g catch_amalgamated.cpp
+      run: g++ -Wall -g testes.cpp
+      run: gcc -Wall -g cadeias.c
+      run: g++ -Wall -g cadeias.o testes.o  catch_amalgamated.o
+    - name: Roda testes TDD
+      run: ./a.out --reporter compact --success
+    - name: Roda valgrind
+      run: valgrind -q --leak-check=full ./a.out --reporter compact --success
